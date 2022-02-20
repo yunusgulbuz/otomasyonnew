@@ -19,6 +19,8 @@ class CustomUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     kurum = models.ForeignKey(Kurumlar, on_delete=models.CASCADE, blank=True, null=False)
     type = models.ForeignKey(UserTypes, on_delete=models.CASCADE, blank=True, null=False)
+    isim=models.CharField(max_length=20,blank=False,null=False)
+    soyisim=models.CharField(max_length=20,blank=False,null=False)
 
 
 class Cards(models.Model):
