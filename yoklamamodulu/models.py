@@ -69,6 +69,9 @@ class Hoca_Features(models.Model):
 
 class Ogrenci_Features(models.Model):
     ders = models.ForeignKey(Dersler, on_delete=models.CASCADE, blank=True, null=False)
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, blank=False, null=False)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, blank=False, null=False)
+    isim = models.CharField(max_length=20, blank=False, null=False)
+    soyisim = models.CharField(max_length=20, blank=False, null=False)
     veli_tel = models.CharField(max_length=10)
     ogr_no = models.IntegerField(blank=False, null=False)
+
